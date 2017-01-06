@@ -1,2 +1,2 @@
 # blog
-Voici mon projet de blog lol
+Voici mon projet de blog
