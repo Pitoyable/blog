@@ -13,11 +13,22 @@ class Article
     $this -> contenu = $contenu;
   }
 
-  public function display() {}
-    // afficher larticle, choper dans la bdd, mettre en page
+  public function display($instance) {
+    echo "<section>
+          <h1>".$this -> titre."</h1>
+          <h3><em>".$this -> chapo."</em></h3>
+          <p>".$this -> contenu."</p>
+          </section>";
 
-  public function edit() {}
-    // modifier larticle
+  }
+
+  public function edit($instance, $titre, $chapo, $contenu) {
+    $sql = "UPDATE article SET titre = '".$titre."', chapo = '".$chapo."', contenu = '".$contenu."'";
+
+    $edit = $instance->query($sql);
+
+    echo "L'article à été édité.";
+  }
 
   public function write($instance) {
     // ecrire larticle et envoyer en bdd

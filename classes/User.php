@@ -14,6 +14,8 @@ class User
 
   public function logIn($instance) {
     // connexion à la BDD
+    session_start();
+    
     $sql = "SELECT pseudo, email FROM user WHERE pseudo = '".$this -> pseudo."' AND email = '".$this -> email."'";
 
     var_dump($sql);
